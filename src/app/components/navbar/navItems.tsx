@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 import { Slide as Menu } from 'react-burger-menu';
 import { useMediaQuery } from 'react-responsive';
 import { SCREENS } from '../responsive';
+import menuStyles from './menuStyles';
 
 const ListContainer = styled.ul`
     ${tw`
@@ -33,7 +34,7 @@ export function NavItems() {
 
     if (isMobile) {
         return (
-            <Menu>
+            <Menu styles={ menuStyles }>
                 <ListContainer>
                     <NavItem>
                         <a href="#">Home</a>
