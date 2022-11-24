@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+import MclarenCarImg from "../../../assets/images/mclaren-orange-big.png";
+import BlobImg from "../../../assets/images/blob.svg";
+
 const TopSectionContainer = styled.div`
     min-height: 400px;
     margin-top: 6em;
@@ -95,5 +98,19 @@ const StandaloneCar = styled.div`
 `;
 
 export function TopSection() {
-    
+    return <TopSectionContainer>
+        <LeftSectionContainer>
+            <Slogan>Rent the best quality cars with us</Slogan>
+            <Description>Always choose the best car from our local stores or order them remotely at the best price for you and get the best quality cars for as long as you like.</Description>
+        </LeftSectionContainer>
+
+        <RightSectionContainer>
+            <BlobContainer>
+                <img src={BlobImg} />
+            </BlobContainer>
+            <StandaloneCar>
+                <img src={MclarenCarImg} />
+            </StandaloneCar>
+        </RightSectionContainer>
+    </TopSectionContainer>
 }
