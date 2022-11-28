@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { Marginer } from '../marginer';
 
 const CardContainer = styled.div`
     ${tw`
@@ -77,5 +78,6 @@ export function BookCard() {
                 Return date
             </Name>
         </ItemContainer>
+        <Marginer direction="horizontal" margin="2em" />
     </CardContainer>
 }
