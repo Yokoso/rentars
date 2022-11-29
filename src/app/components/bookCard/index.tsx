@@ -31,7 +31,10 @@ const CardContainer = styled.div`
 `;
 
 const ItemContainer = styled.div`
-    ${tw`flex`};
+    ${tw`
+        flex
+        relative
+    `};
 `;
 
 const Icon = styled.span`
@@ -63,6 +66,12 @@ const LineSeperator = styled.span`
         md:mr-5
         md:ml-5
     `};
+`;
+
+const DateCalendar = styled(Calendar)`
+    position: absolute;
+    top: 1em;
+    left: 0;
 `;
 
 
