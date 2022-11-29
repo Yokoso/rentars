@@ -1,6 +1,6 @@
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Button } from '../button';
@@ -53,6 +53,7 @@ const Name = styled.span`
         text-gray-600
         text-xs
         md:text-sm
+        cursor-pointer
     `};
 `;
 
@@ -73,29 +74,44 @@ const DateCalendar = styled(Calendar)`
     max-width: none;
     top: 3.5em;
     left: -2em;
-
 `;
 
 
 export function BookCard() {
+    const [startDate, setStartDate] = useState<Date>(new Date());
+    const [isStartCalendarOpen, setStartCalendarOpen] = useState(false);
+    const [returnDate, setReturnDate] = useState<Date>(new Date());
+    const [isReturnCalendarOpen, setReturnCalendarOpen] = useState(false);
+
+    console.info("Value: ", startDate);
+
+    const toggleStartDateCalendar = () => {
+        setStartCalendarOpen(!isStartCalendarOpen);
+    }
+
+    const toggleReturnDateCalendar = () => {
+        setReturnCalendarOpen(!isReturnCalendarOpen);
+    }
+
     return <CardContainer>
         <ItemContainer>
             <Icon>
                 <FontAwesomeIcon icon={faCalendarAlt} />
             </Icon>
-            <Name>
+            <Name onClick={toggleStartDateCalendar}>
                 Pick up date
             </Name>
-            <DateCalendar />
+            { isStartCalendarOpen && (<DateCalendar value={startDate} onChange={setStartDate} />) }
         </ItemContainer>
         <LineSeperator />
         <ItemContainer>
             <Icon>
                 <FontAwesomeIcon icon={faCalendarAlt} />
             </Icon>
-            <Name>
+            <Name onClick={toggleReturnDateCalendar} >
                 Return date
             </Name>
+            { isReturnCalendarOpen && (<DateCalendar value={returnDate} onChange={setReturnDate} />) }
         </ItemContainer>
         <Marginer direction="horizontal" margin="2em" />
         <Button text="Book your ride" />
