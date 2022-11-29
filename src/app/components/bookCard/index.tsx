@@ -70,8 +70,10 @@ const LineSeperator = styled.span`
 
 const DateCalendar = styled(Calendar)`
     position: absolute;
-    top: 1em;
-    left: 0;
+    max-width: none;
+    top: 3.5em;
+    left: -2em;
+
 `;
 
 
@@ -84,6 +86,7 @@ export function BookCard() {
             <Name>
                 Pick up date
             </Name>
+            <DateCalendar />
         </ItemContainer>
         <LineSeperator />
         <ItemContainer>
