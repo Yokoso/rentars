@@ -6,6 +6,9 @@ import tw from 'twin.macro';
 import { Button } from '../button';
 import { Marginer } from '../marginer';
 
+import { SCREENS } from "../responsive";
+
+
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
