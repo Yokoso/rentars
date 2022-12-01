@@ -90,10 +90,16 @@ export function BookCard() {
 
     const toggleStartDateCalendar = () => {
         setStartCalendarOpen(!isStartCalendarOpen);
+        if (isReturnCalendarOpen) { 
+            setReturnCalendarOpen(false);
+        }
     }
 
     const toggleReturnDateCalendar = () => {
         setReturnCalendarOpen(!isReturnCalendarOpen);
+        if (isStartCalendarOpen) {
+            setStartCalendarOpen(false);
+        }
     }
 
     return <CardContainer>
