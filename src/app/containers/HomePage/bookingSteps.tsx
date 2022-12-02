@@ -1,3 +1,5 @@
+import { faCalendarAlt, faMapMarkedAlt, faPenAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -6,7 +8,7 @@ const Container = styled.div`
     ${tw`
         w-full
         flex
-        flex-column
+        flex-col
         items-center
         pt-3
         pb-3
@@ -17,8 +19,8 @@ const Container = styled.div`
 
 const Title = styled.h2`
     ${tw`
-        text-xl
-        lg:text-4xl
+        text-3xl
+        lg:text-5xl
         text-black
         font-extrabold
     `};
@@ -38,22 +40,22 @@ const StepContainer = styled.div`
     ${tw`
         flex
         flex-col
-        w-16
         md:w-96
         items-center
         transition-colors
         hover:text-red-500
+        m-3
     `};
 `;
 
 const Step = styled.div`
+    box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
     ${tw`
         flex
         rounded-lg
         items-center
         justify-center
         p-6
-
     `};
 `;
 
@@ -84,6 +86,45 @@ const StepIcon = styled.span`
     `};
 `;
 
-export function BookingSteps() {
+// STEPS HIERARCHY
 
+export function BookingSteps() {
+    return <Container>
+        <Title>Our working steps</Title>
+        <StepsContainer>
+            <StepContainer>
+                <Step>
+                    <StepIcon>
+                        <FontAwesomeIcon icon={faMapMarkedAlt} />
+                    </StepIcon>
+                </Step>
+                <StepTitle>Choose Location</StepTitle>
+                <StepDescription>Find the nearest Rentars point and book your car.</StepDescription>
+            </StepContainer>
+        </StepsContainer>
+
+        <StepsContainer>
+            <StepContainer>
+                <Step>
+                    <StepIcon>
+                        <FontAwesomeIcon icon={faCalendarAlt} />
+                    </StepIcon>
+                </Step>
+                <StepTitle>Pick-Up Date</StepTitle>
+                <StepDescription>Choose the range of your Rentars.</StepDescription>
+            </StepContainer>
+        </StepsContainer>
+
+        <StepsContainer>
+            <StepContainer>
+                <Step>
+                    <StepIcon>
+                        <FontAwesomeIcon icon={faPenAlt} />
+                    </StepIcon>
+                </Step>
+                <StepTitle>Confirm!</StepTitle>
+                <StepDescription>Find the nearest Rentars point and book your car.</StepDescription>
+            </StepContainer>
+        </StepsContainer>
+    </Container>
 }
