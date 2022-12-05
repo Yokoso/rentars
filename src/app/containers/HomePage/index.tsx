@@ -22,8 +22,9 @@ export function HomePage(){
     return <PageContainer>
         <Navbar />
         <TopSection />
-        <Marginer margin="2em" direction="vertical" />
+        <Marginer margin="4em" direction="vertical" />
         <BookCard />
+        <Marginer margin="8em" direction="vertical" />
         <BookingSteps />
     </PageContainer>
 }

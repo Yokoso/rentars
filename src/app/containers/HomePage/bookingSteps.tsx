@@ -86,45 +86,45 @@ const StepIcon = styled.span`
     `};
 `;
 
-// STEPS HIERARCHY
-
 export function BookingSteps() {
-    return <Container>
-        <Title>Our working steps</Title>
-        <StepsContainer>
-            <StepContainer>
-                <Step>
-                    <StepIcon>
-                        <FontAwesomeIcon icon={faMapMarkedAlt} />
-                    </StepIcon>
-                </Step>
-                <StepTitle>Choose Location</StepTitle>
-                <StepDescription>Find the nearest Rentars point and book your car.</StepDescription>
-            </StepContainer>
-        </StepsContainer>
+    return (
+        <Container>
+            <Title>Our working steps</Title>
+            <StepsContainer>
+                <StepContainer>
+                    <Step>
+                        <StepIcon>
+                            <FontAwesomeIcon icon={faMapMarkedAlt} />
+                        </StepIcon>
+                    </Step>
+                    <StepTitle>Choose Location</StepTitle>
+                    <StepDescription>Find the nearest Rentars point and book your car.</StepDescription>
+                </StepContainer>
+            </StepsContainer>
 
-        <StepsContainer>
-            <StepContainer>
-                <Step>
-                    <StepIcon>
-                        <FontAwesomeIcon icon={faCalendarAlt} />
-                    </StepIcon>
-                </Step>
-                <StepTitle>Pick-Up Date</StepTitle>
-                <StepDescription>Choose the range of your Rentars.</StepDescription>
-            </StepContainer>
-        </StepsContainer>
+            <StepsContainer>
+                <StepContainer>
+                    <Step>
+                        <StepIcon>
+                            <FontAwesomeIcon icon={faCalendarAlt} />
+                        </StepIcon>
+                    </Step>
+                    <StepTitle>Pick-Up Date</StepTitle>
+                    <StepDescription>Choose the range of your Rentars.</StepDescription>
+                </StepContainer>
+            </StepsContainer>
 
-        <StepsContainer>
-            <StepContainer>
-                <Step>
-                    <StepIcon>
-                        <FontAwesomeIcon icon={faPenAlt} />
-                    </StepIcon>
-                </Step>
-                <StepTitle>Confirm!</StepTitle>
-                <StepDescription>Find the nearest Rentars point and book your car.</StepDescription>
-            </StepContainer>
-        </StepsContainer>
-    </Container>
+            <StepsContainer>
+                <StepContainer>
+                    <Step>
+                        <StepIcon>
+                            <FontAwesomeIcon icon={faPenAlt} />
+                        </StepIcon>
+                    </Step>
+                    <StepTitle>Confirm!</StepTitle>
+                    <StepDescription>Find the nearest Rentars point and book your car.</StepDescription>
+                </StepContainer>
+            </StepsContainer>
+        </Container>
+    )
 }
