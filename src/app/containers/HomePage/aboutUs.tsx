@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { SCREENS } from '../../components/responsive';
 
+import JeepImg from '../../../assets/images/jeep.png';
+
 const AboutUsContainer = styled.div`
     ${tw`
         w-full
@@ -80,5 +82,17 @@ const InfoText = styled.p`
 `;
 
 export function AboutUs() {
-    
+    return (
+        <AboutUsContainer>
+            <CarContainer>
+                <img src={JeepImg} alt="jeep" />
+            </CarContainer>
+            <InfoContainer>
+                <Title>Feel The Best Experience With Our Rentars Deals.</Title>
+                <InfoText>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at scelerisque ante. Duis eu lorem viverra, eleifend sem maximus, vulputate lectus. Maecenas lobortis tellus et tellus lobortis, eget bibendum enim ultrices. Aliquam vitae orci sed dui ultrices consectetur. Maecenas et lectus eget neque tincidunt sagittis. Maecenas a auctor velit, nec egestas risus. Nulla molestie bibendum quam et aliquam. Nulla cursus cursus tristique. Quisque ut risus aliquet, sollicitudin nisl sed, finibus purus. Mauris odio odio, accumsan in urna sit amet, interdum interdum libero. Nunc iaculis tristique nisl, sit amet molestie turpis tincidunt in. Nunc a ex pretium, pellentesque tortor pharetra, tempor odio.
+                </InfoText>
+            </InfoContainer>
+        </AboutUsContainer>
+    );
 }
