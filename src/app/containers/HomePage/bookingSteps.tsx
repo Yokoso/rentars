@@ -100,9 +100,6 @@ export function BookingSteps() {
                     <StepTitle>Choose Location</StepTitle>
                     <StepDescription>Find the nearest Rentars point and book your car.</StepDescription>
                 </StepContainer>
-            </StepsContainer>
-
-            <StepsContainer>
                 <StepContainer>
                     <Step>
                         <StepIcon>
@@ -112,9 +109,7 @@ export function BookingSteps() {
                     <StepTitle>Pick-Up Date</StepTitle>
                     <StepDescription>Choose the range of your Rentars.</StepDescription>
                 </StepContainer>
-            </StepsContainer>
 
-            <StepsContainer>
                 <StepContainer>
                     <Step>
                         <StepIcon>
