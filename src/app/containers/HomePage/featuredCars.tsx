@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { Car } from '../../components/car';
 
 const FeaturedCarsContainer = styled.div`
     ${tw`
@@ -43,7 +44,7 @@ export function FeaturedCars() {
         <FeaturedCarsContainer>
             <Title>Explore Our Top Deals</Title>
             <CarsContainer>
-                
+                <Car />
             </CarsContainer>
         </FeaturedCarsContainer>
     );
