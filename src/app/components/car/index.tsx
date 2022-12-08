@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { ICar } from '../../../typings/car';
+import { Button } from '../button';
 
 interface ICarProps extends ICar {
     availability: boolean;
@@ -118,6 +119,14 @@ const Seperator = styled.div`
         mb-2
     `};
 `;
+
+const RentButton = styled(Button)`
+    ${tw`
+        min-w-full
+        mt-5
+    `};
+`;
+
 
 export function Car(props: ICarProps) {
 
