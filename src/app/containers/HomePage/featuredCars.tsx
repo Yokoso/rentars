@@ -55,7 +55,7 @@ export function FeaturedCars() {
     };
     const testCar2: ICar = {
         name: 'Honda City Car',
-        thumbnailSrc: 'https://shinewiki.com/wp-content/uploads/2019/11/honda-city.jpg',
+        thumbnailSrc: 'https://images.dealer.com/ddc/vehicles/2019/Honda/Civic/Sedan/trim_Sport_1ef4cc/color/Modern%20Steel%20Metallic-GY-64,63,63-640-en_US.jpg',
         dailyPrice: 50,
         monthlyPrice: 1500,
         mileage: 20,
@@ -77,7 +77,9 @@ export function FeaturedCars() {
         <FeaturedCarsContainer>
             <Title>Explore Our Top Deals</Title>
             <CarsContainer>
-                <Car />
+                <Car { ...testCar1 } availability={true} />
+                <Car { ...testCar2 } availability={true} />
+                <Car { ...testCar3 } availability={false} />
             </CarsContainer>
         </FeaturedCarsContainer>
     );

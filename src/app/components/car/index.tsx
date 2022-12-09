@@ -11,7 +11,7 @@ interface ICarProps extends ICar {
 }
 
 const CarContainer = styled.div`
-    min-width: 16.5em;
+    width: 16.5em;
     min-height: 22.2em;
     max-height: 22.2em;
     box-shadow: 0 1.3px 17px -2px rgba(0, 0, 0, 0.4);
