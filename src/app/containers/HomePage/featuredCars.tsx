@@ -74,12 +74,22 @@ export function FeaturedCars() {
         gasType: 'Electric'
     };
 
+    const cars = [
+        <Car { ...testCar1 } availability={true} />,
+        <Car { ...testCar2 } availability={true} />,
+        <Car { ...testCar3 } availability={true} />,
+        <Car { ...testCar3 } availability={true} />,
+        <Car { ...testCar1 } availability={true} />,
+        <Car { ...testCar2 } availability={true} />,
+    ];
+
 
     return (
         <FeaturedCarsContainer>
             <Title>Explore Our Top Deals</Title>
             <CarsContainer>
                 <Carousel value={ current } onChange={ setCurrent } 
+                    slides={ cars }
                     plugins={[
                         "clickToChange",
                         {
@@ -89,16 +99,30 @@ export function FeaturedCars() {
                             },
                         },
                     ]}
-                    slides={ [
-                        <Car { ...testCar1 } availability={true} />,
-                        <Car { ...testCar2 } availability={true} />,
-                        <Car { ...testCar3 } availability={true} />,
-                        <Car { ...testCar3 } availability={true} />,
-                        <Car { ...testCar1 } availability={true} />,
-                        <Car { ...testCar2 } availability={true} />,
-                    ] } 
+                    breakpoints={{
+                        640: {
+                            plugins: [
+                                {
+                                    resolve: slidesToShowPlugin,
+                                    options: {
+                                        numberOfSlides: 1
+                                    }
+                                },
+                            ]
+                        },
+                        900: {
+                            plugins: [
+                                {
+                                    resolve: slidesToShowPlugin,
+                                    options: {
+                                        numberOfSlides: 1
+                                    }
+                                },
+                            ]
+                        }
+                    }}
                 />
-                <Dots value={ current } onChange={ setCurrent } number={ 4 } />
+                <Dots value={ current } onChange={ setCurrent } number={ cars.length } />
             </CarsContainer>
         </FeaturedCarsContainer>
     );
