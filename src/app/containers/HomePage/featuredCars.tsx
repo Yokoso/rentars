@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Car } from '../../components/car';
 import { ICar } from '../../../typings/car';
-import Carousel, { Dots, slidesToShow } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/styles.css';
+import Carousel, { Dots, slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 const FeaturedCarsContainer = styled.div`
     ${tw`
@@ -43,6 +43,7 @@ const CarsContainer = styled.div`
 `;
 
 export function FeaturedCars() {
+    const [current, setCurrent] = useState(0);
 
     // temporary static car list
     const testCar1: ICar = {
@@ -78,9 +79,26 @@ export function FeaturedCars() {
         <FeaturedCarsContainer>
             <Title>Explore Our Top Deals</Title>
             <CarsContainer>
-                <Car { ...testCar1 } availability={true} />
-                <Car { ...testCar2 } availability={true} />
-                <Car { ...testCar3 } availability={false} />
+                <Carousel value={ current } onChange={ setCurrent } 
+                    plugins={[
+                        "clickToChange",
+                        {
+                            resolve: slidesToShowPlugin,
+                            options: {
+                                numberOfSlides: 3,
+                            },
+                        },
+                    ]}
+                    slides={ [
+                        <Car { ...testCar1 } availability={true} />,
+                        <Car { ...testCar2 } availability={true} />,
+                        <Car { ...testCar3 } availability={true} />,
+                        <Car { ...testCar3 } availability={true} />,
+                        <Car { ...testCar1 } availability={true} />,
+                        <Car { ...testCar2 } availability={true} />,
+                    ] } 
+                />
+                <Dots value={ current } onChange={ setCurrent } number={ 4 } />
             </CarsContainer>
         </FeaturedCarsContainer>
     );
