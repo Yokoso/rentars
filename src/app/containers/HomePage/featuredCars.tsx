@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Car } from '../../components/car';
 import { ICar } from '../../../typings/car';
-
+import Carousel, { Dots, slidesToShow } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/styles.css';
 
 const FeaturedCarsContainer = styled.div`
     ${tw`
