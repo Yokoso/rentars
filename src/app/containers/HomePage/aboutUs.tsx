@@ -27,11 +27,14 @@ const CarContainer = styled.div`
     height: 15em;
     margin-left: -50px;
 
-    img {
-        width: auto;
-        height: 100%;
-    }
+    // img {
+    //     width: auto;
+    //     height: 100%;
+    // }
 
+    @media (min-height: ${SCREENS.sm}) {
+        height: 20em;
+    }
     @media (min-height: ${SCREENS.md}) {
         height: 28em;
     }
