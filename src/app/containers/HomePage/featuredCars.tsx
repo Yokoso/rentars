@@ -5,6 +5,8 @@ import { Car } from '../../components/car';
 import { ICar } from '../../../typings/car';
 import Carousel, { Dots, slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import { useMediaQuery } from 'react-responsive';
+import { SCREENS } from '../../components/responsive';
 
 const FeaturedCarsContainer = styled.div`
     ${tw`
@@ -45,6 +47,8 @@ const CarsContainer = styled.div`
 export function FeaturedCars() {
     const [current, setCurrent] = useState(0);
 
+    const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
+
     // temporary static car list
     const testCar1: ICar = {
         name: 'Audi S3 Car',
@@ -80,9 +84,9 @@ export function FeaturedCars() {
         <Car { ...testCar3 } availability={true} />,
         <Car { ...testCar3 } availability={true} />,
         <Car { ...testCar1 } availability={true} />,
-        <Car { ...testCar2 } availability={true} />,
     ];
 
+    const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 3);
 
     return (
         <FeaturedCarsContainer>
@@ -115,14 +119,15 @@ export function FeaturedCars() {
                                 {
                                     resolve: slidesToShowPlugin,
                                     options: {
-                                        numberOfSlides: 1
+                                        numberOfSlides: 2
                                     }
                                 },
                             ]
                         }
                     }}
                 />
-                <Dots value={ current } onChange={ setCurrent } number={ cars.length } />
+                <Dots value={ current } onChange={ setCurrent } 
+                    number={ numberOfDots } />
             </CarsContainer>
         </FeaturedCarsContainer>
     );
