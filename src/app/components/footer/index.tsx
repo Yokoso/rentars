@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 import { Logo } from '../logo';
 
 const FooterContainer = styled.div`
-    min-height: 30em;
+    min-height: 20em;
     background-color: #1d2124;
     ${tw`
         flex
@@ -73,15 +73,17 @@ const ListItem = styled.li`
 
     & > a {
         ${tw`
-            text-xs
+            text-sm
             text-white
+            transition-all
+            hover:text-gray-400
         `};
     }
 `;
 
 const HeaderTitle = styled.h3`
     ${tw`
-        text-xl
+        text-2xl
         text-white
         font-bold
         mb-3
