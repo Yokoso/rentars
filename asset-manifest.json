@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/rentars/static/css/main.90ed15f7.css",
+    "main.js": "/rentars/static/js/main.d721ef49.js",
+    "static/js/787.7b50f1eb.chunk.js": "/rentars/static/js/787.7b50f1eb.chunk.js",
+    "static/media/jeep.png": "/rentars/static/media/jeep.18461d13eb608d076dda.png",
+    "static/media/mclaren-orange-big.png": "/rentars/static/media/mclaren-orange-big.46e3c615f2d4c2513ce5.png",
+    "index.html": "/rentars/index.html",
+    "static/media/blob.svg": "/rentars/static/media/blob.f2195ec62f0748be8f89a49cc63bf8b9.svg",
+    "main.90ed15f7.css.map": "/rentars/static/css/main.90ed15f7.css.map",
+    "main.d721ef49.js.map": "/rentars/static/js/main.d721ef49.js.map",
+    "787.7b50f1eb.chunk.js.map": "/rentars/static/js/787.7b50f1eb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90ed15f7.css",
+    "static/js/main.d721ef49.js"
+  ]
+}
