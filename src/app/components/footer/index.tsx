@@ -6,14 +6,14 @@ import tw from 'twin.macro';
 import { Logo } from '../logo';
 
 const FooterContainer = styled.div`
-    min-height: 20em;
+    // min-height: 20em;
     background-color: #1d2124;
     ${tw`
         flex
+        flex-col
         min-w-full
-        pt-4
+        pt-10
         md:pt-12
-        pb-1
         items-center
         justify-center
     `};
@@ -22,11 +22,13 @@ const FooterContainer = styled.div`
 const InnerContainer = styled.div`
     ${tw`
         flex
+        flex-wrap
         w-full
         h-full
         max-w-screen-2xl
         lg:pl-12
         lg:pr-12
+        justify-center
     `};
 `;
 
@@ -36,6 +38,11 @@ const AboutContainer = styled.div`
         flex-col
         mr-2
         md:mr-16
+        pb-5
+        pl-10
+        pr-10
+        md:pl-3
+        md:pr-3
     `};
 `;
 
@@ -52,10 +59,19 @@ const AboutText = styled.p`
 
 const SectionContainer = styled.div`
     ${tw`
+        w-full
+        md:w-auto
         flex
         flex-col
         mr-2
         md:mr-16
+        pl-10
+        pr-10
+        md:pl-3
+        md:pr-3
+        mt-5
+        md:mt-0
+        mb-5
     `};
 `;
 
@@ -121,6 +137,26 @@ const SmallText = styled.h6`
     `};
 `;
 
+const BottomContainer = styled.div`
+    ${tw`
+        w-full
+        flex
+        justify-center
+        lg:justify-start
+        max-w-screen-xl
+        lg:pl-12
+        lg:pr-12
+        p-2
+    `};
+`;
+
+const CopyrightText = styled.small`
+    font-size: 12px;
+    ${tw`
+        text-gray-400
+    `};
+`;
+
 export function Footer() {
     return (
         <FooterContainer>
@@ -155,7 +191,7 @@ export function Footer() {
                 </SectionContainer>
 
                 <SectionContainer>
-                    <HeaderTitle>Call now</HeaderTitle>
+                    <HeaderTitle>Phone</HeaderTitle>
                     <HorizontalContainer>
                         <RedIcon>
                             <FontAwesomeIcon icon={faPhoneAlt} />
@@ -174,6 +210,9 @@ export function Footer() {
                     </HorizontalContainer>
                 </SectionContainer>
             </InnerContainer>
+            <BottomContainer>
+                <CopyrightText>Copyright &copy; { new Date().getFullYear()} Rentars. All rights reserved.</CopyrightText>
+            </BottomContainer>
         </FooterContainer>
     );
 }
