@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Car } from '../../components/car';
@@ -7,6 +7,7 @@ import Carousel, { Dots, slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { useMediaQuery } from 'react-responsive';
 import { SCREENS } from '../../components/responsive';
+import carServices from '../../services/carServices';
 
 const FeaturedCarsContainer = styled.div`
     ${tw`
@@ -49,6 +50,14 @@ export function FeaturedCars() {
 
     const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
+    const fetchFeaturedCars = async () => {
+        const cars = await carServices.getCars().catch(err => {
+            console.log("Error: ", err);
+        })
+
+        console.log("Cars: ", cars);
+    };
+
     // temporary static car list
     const testCar1: ICar = {
         name: 'Audi S3 Car',
@@ -77,6 +86,10 @@ export function FeaturedCars() {
         gearType: 'Automatic',
         gasType: 'Electric'
     };
+
+    useEffect(() => {
+        fetchFeaturedCars();
+    }, []);
 
     const cars = [
         <Car { ...testCar1 } availability={true} />,
