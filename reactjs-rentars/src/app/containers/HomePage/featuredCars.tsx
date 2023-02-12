@@ -58,45 +58,13 @@ export function FeaturedCars() {
         console.log("Cars: ", cars);
     };
 
-    // temporary static car list
-    const testCar1: ICar = {
-        name: 'Audi S3 Car',
-        thumbnailSrc: 'https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg',
-        dailyPrice: 70,
-        monthlyPrice: 1600,
-        mileage: 10,
-        gearType: 'Automatic',
-        gasType: 'Petrol'
-    };
-    const testCar2: ICar = {
-        name: 'Honda City Car',
-        thumbnailSrc: 'https://images.dealer.com/ddc/vehicles/2019/Honda/Civic/Sedan/trim_Sport_1ef4cc/color/Modern%20Steel%20Metallic-GY-64,63,63-640-en_US.jpg',
-        dailyPrice: 50,
-        monthlyPrice: 1500,
-        mileage: 20,
-        gearType: 'Manual',
-        gasType: 'Petrol'
-    };
-    const testCar3: ICar = {
-        name: 'Volvo XC60',
-        thumbnailSrc: 'https://images.dealer.com/ddc/vehicles/2023/Volvo/XC60%20Recharge%20Plug-In%20Hybrid/SUV/trim_T8_Plus_Bright_Theme_fba6a0/color/Silver%20Dawn%20Metallic-735-148,149,156-640-en_US.jpg?impolicy=resize&w=640',
-        dailyPrice: 100,
-        monthlyPrice: 2400,
-        mileage: 10,
-        gearType: 'Automatic',
-        gasType: 'Electric'
-    };
 
     useEffect(() => {
         fetchFeaturedCars();
     }, []);
 
     const cars = [
-        <Car { ...testCar1 } availability={true} />,
-        <Car { ...testCar2 } availability={true} />,
-        <Car { ...testCar3 } availability={true} />,
-        <Car { ...testCar3 } availability={true} />,
-        <Car { ...testCar1 } availability={true} />,
+        <Car />,
     ];
 
     const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 3);
