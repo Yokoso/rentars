@@ -11,6 +11,7 @@ import carServices from '../../services/carServices';
 import { Dispatch } from '@reduxjs/toolkit';
 import { GetCars_cars } from '../../services/carServices/__generated__/GetCars';
 import { setFeaturedCars } from './slice';
+import { useDispatch } from 'react-redux';
 
 const FeaturedCarsContainer = styled.div`
     ${tw`
@@ -56,6 +57,8 @@ export function FeaturedCars() {
     const [current, setCurrent] = useState(0);
 
     const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
+
+    const { setFeaturedCars } = actionDispatch(useDispatch());
 
     const fetchFeaturedCars = async () => {
         const cars = await carServices.getCars().catch(err => {
