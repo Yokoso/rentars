@@ -66,6 +66,9 @@ export function FeaturedCars() {
         })
 
         console.log("Cars: ", cars);
+        if (cars) {
+            setFeaturedCars(cars);
+        }
     };
 
 
