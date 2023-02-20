@@ -8,6 +8,9 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { useMediaQuery } from 'react-responsive';
 import { SCREENS } from '../../components/responsive';
 import carServices from '../../services/carServices';
+import { Dispatch } from '@reduxjs/toolkit';
+import { GetCars_cars } from '../../services/carServices/__generated__/GetCars';
+import { setFeaturedCars } from './slice';
 
 const FeaturedCarsContainer = styled.div`
     ${tw`
@@ -45,6 +48,10 @@ const CarsContainer = styled.div`
     `};
 `;
 
+const actionDispatch = (dispatch: Dispatch) => ({
+    setFeaturedCars: (cars: GetCars_cars[]) => dispatch(setFeaturedCars(cars)),
+});
+
 export function FeaturedCars() {
     const [current, setCurrent] = useState(0);
 
@@ -64,7 +71,13 @@ export function FeaturedCars() {
     }, []);
 
     const cars = [
-        <Car />,
+        <Car 
+            availability={false} 
+            thumbnailSrc={''} 
+            name={''} mileage={0} 
+            gearType={''} dailyPrice={0} 
+            monthlyPrice={0} gasType={''} 
+        />,
     ];
 
     const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 3);
